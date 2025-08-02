@@ -110,7 +110,7 @@ export default function PaymentStep({ onNext, onPrevious, onDataChange, formData
         return
       }
 
-      const response = await fetch("http://127.0.0.1:8000/api/business/account/me/", {
+      const response = await fetch("https://api.legitbills.com/api/business/account/me/", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -149,7 +149,7 @@ export default function PaymentStep({ onNext, onPrevious, onDataChange, formData
       const token = localStorage.getItem("auth_token")
       if (!token) return
 
-      const response = await fetch("http://127.0.0.1:8000/payment/banks/", {
+      const response = await fetch("https://api.legitbills.com/payment/banks/", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -196,7 +196,7 @@ export default function PaymentStep({ onNext, onPrevious, onDataChange, formData
       }
 
       // Use GET request with query parameters
-      const url = new URL("http://127.0.0.1:8000/payment/resolve-account/")
+      const url = new URL("https://api.legitbills.com/payment/resolve-account/")
       url.searchParams.append("account_number", paystackDetails.accountNumber)
       url.searchParams.append("bank_code", paystackDetails.bankCode)
 
@@ -259,7 +259,7 @@ export default function PaymentStep({ onNext, onPrevious, onDataChange, formData
         return
       }
 
-      const response = await fetch("http://127.0.0.1:8000/payment/settings/", {
+      const response = await fetch("https://api.legitbills.com/payment/settings/", {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,

@@ -75,7 +75,7 @@ export default function ReviewStep({ formData, onPrevious }: ReviewStepProps) {
         const token = localStorage.getItem("auth_token")
         if (!token) return
 
-        const response = await fetch("http://127.0.0.1:8000/api/business/account/me/", {
+        const response = await fetch("https://api.legitbills.com/api/business/account/me/", {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default function ReviewStep({ formData, onPrevious }: ReviewStepProps) {
         return
       }
 
-      const response = await fetch("http://127.0.0.1:8000/subscription/subscription/start/", {
+      const response = await fetch("https://api.legitbills.com/subscription/subscription/start/", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -150,7 +150,7 @@ export default function ReviewStep({ formData, onPrevious }: ReviewStepProps) {
         return
       }
 
-      const response = await fetch("http://127.0.0.1:8000/payment/create-subaccount/", {
+      const response = await fetch("https://api.legitbills.com/payment/create-subaccount/", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

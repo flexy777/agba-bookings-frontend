@@ -91,13 +91,13 @@ export default function ScheduleStep({ onNext, onPrevious, onDataChange }: Sched
 
       // Load schedules and booking settings in parallel
       const [schedulesResponse, bookingSettingsResponse] = await Promise.all([
-        fetch("http://127.0.0.1:8000/business-schedules/", {
+        fetch("https://api.legitbills.com/business-schedules/", {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
           },
         }),
-        fetch("http://127.0.0.1:8000/booking-settings/", {
+        fetch("https://api.legitbills.com/booking-settings/", {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
@@ -257,8 +257,8 @@ export default function ScheduleStep({ onNext, onPrevious, onDataChange }: Sched
       // Use PUT if we have an ID, POST if creating new
       const method = daySchedule.id ? "PUT" : "POST"
       const url = daySchedule.id
-        ? `http://127.0.0.1:8000/business-schedules/${daySchedule.id}/`
-        : "http://127.0.0.1:8000/business-schedules/"
+        ? `https://api.legitbills.com/business-schedules/${daySchedule.id}/`
+        : "https://api.legitbills.com/business-schedules/"
 
       const response = await fetch(url, {
         method,
@@ -310,8 +310,8 @@ export default function ScheduleStep({ onNext, onPrevious, onDataChange }: Sched
       // Use PUT if we have an ID, POST if creating new
       const method = settings.id ? "PUT" : "POST"
       const url = settings.id
-        ? `http://127.0.0.1:8000/booking-settings/${settings.id}/`
-        : "http://127.0.0.1:8000/booking-settings/"
+        ? `https://api.legitbills.com/booking-settings/${settings.id}/`
+        : "https://api.legitbills.com/booking-settings/"
 
       const response = await fetch(url, {
         method,

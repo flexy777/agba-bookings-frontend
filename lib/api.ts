@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://127.0.0.1:8000"
+const API_BASE_URL = "https://api.legitbills.com"
 
 // Helper function to get auth token from localStorage
 const getAuthToken = (): string | null => {
@@ -90,8 +90,20 @@ export const businessApi = {
 // Public Booking API (No Auth)
 export const bookingApi = {
   getBusinessDetails: (slug: string) => apiRequest(`/booking/public/business/${slug}/`, {}, true),
-  createBooking: (bookingData: any) =>
-    apiRequest("/booking/public/create/", { method: "POST", body: JSON.stringify(bookingData) }, true),
+  createBooking: (
+    slug: string,
+    bookingData: {
+      booking_date: string
+      start_time: string
+      end_time: string
+      business_id: string
+      customer_email: string
+      customer_name: string
+      customer_phone: string
+      notes: string
+      service: string
+    },
+  ) => apiRequest(`/booking/public/book/${slug}/`, { method: "POST", body: JSON.stringify(bookingData) }, true),
   getAvailableSlots: (businessId: string, serviceId: string, date: string) =>
     apiRequest(
       `/booking/public/available-slots/?business_id=${businessId}&service_id=${serviceId}&date=${date}`,

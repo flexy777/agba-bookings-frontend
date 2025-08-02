@@ -414,7 +414,7 @@ export default function SettingsPage() {
                     <div className="text-sm text-gray-600">
                       {userData?.subscription?.plan_type === "monthly"
                         ? `₦${userData?.subscription?.monthly_fee}/month`
-                        : `${userData?.subscription?.transaction_percentage} per booking`}
+                        : `${userData?.subscription?.transaction_percentage}% per booking`}
                     </div>
                   </div>
                   <Badge variant={userData?.subscription?.status === "active" ? "default" : "secondary"}>

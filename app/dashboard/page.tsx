@@ -79,7 +79,7 @@ export default function Dashboard() {
       }
 
       console.log("Making API request with token...")
-      const response = await fetch("https://api.legitbills.com/api/business/account/me/", {
+      const response = await fetch("https://api.legitbills.com/agba/api/business/account/me/", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

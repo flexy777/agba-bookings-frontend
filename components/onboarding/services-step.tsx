@@ -52,7 +52,7 @@ export default function ServicesStep({ onNext, onPrevious, onDataChange }: Servi
         return
       }
 
-      const response = await fetch("https://api.legitbills.com/services/", {
+      const response = await fetch("https://api.legitbills.com/agba/services/", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -97,7 +97,7 @@ export default function ServicesStep({ onNext, onPrevious, onDataChange }: Servi
         return
       }
 
-      const response = await fetch("https://api.legitbills.com/services/", {
+      const response = await fetch("https://api.legitbills.com/agba/services/", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -163,7 +163,7 @@ export default function ServicesStep({ onNext, onPrevious, onDataChange }: Servi
         return
       }
 
-      const response = await fetch(`https://api.legitbills.com/services/${editingService}/`, {
+      const response = await fetch(`https://api.legitbills.com/agba/services/${editingService}/`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -213,7 +213,7 @@ export default function ServicesStep({ onNext, onPrevious, onDataChange }: Servi
         return
       }
 
-      const response = await fetch(`https://api.legitbills.com/services/${id}/`, {
+      const response = await fetch(`https://api.legitbills.com/agba/services/${id}/`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

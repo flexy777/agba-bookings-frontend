@@ -48,7 +48,7 @@ export default function SignupPage() {
     setError("")
 
     try {
-      const response = await fetch("https://api.legitbills.com/api/business/signup/", {
+      const response = await fetch("https://api.legitbills.com/agba/api/business/signup/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

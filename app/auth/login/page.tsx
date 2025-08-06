@@ -30,7 +30,7 @@ export default function LoginPage() {
     setError("")
 
     try {
-      const response = await fetch("https://api.legitbills.com/api/business/login/", {
+      const response = await fetch("https://api.legitbills.com/agba/api/business/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
